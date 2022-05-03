@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:lang="http://www.springframework.org/schema/lang"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/lang
+        https://www.springframework.org/schema/lang/spring-lang.xsd">
+	
+	<bean id="book1" class="com.developer.injectcollection.Book">
+		<property name="bookId" value="200"></property>
+		<property name="bookName" value="CSO"></property>
+	</bean>
+	
+	<bean id="book2" class="com.developer.injectcollection.Book">
+		<property name="bookId" value="100"></property>
+		<property name="bookName" value="DSA"></property>
+	</bean>
+	
+	<bean id="myCollection" class="com.developer.injectcollection.MyCollection">
+		<property name="myList">
+			<list>
+				<value>List value A</value>
+				<value>List value B</value>
+			</list>
+		</property>
+		
+		<property name="mySet">
+			<set>
+				<value>Set value A</value>
+				<value>Set value B</value>
+			</set>
+		</property>
+		
+		<property name="myMap">
+			<map>
+				<entry key="10" value="Map Value A"></entry>
+				<entry key="20" value="Map Value B"></entry>
+			</map>
+		</property>
+		
+		<property name="myBook">
+			<list>
+				<ref bean="book1"></ref>
+				<ref bean="book2"></ref>
+			</list>
+		</property>
+	</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+

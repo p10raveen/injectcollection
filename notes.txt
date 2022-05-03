@@ -1,0 +1,69 @@
+Spring Injecting Collection
+-----------------------------
+1. Spring allows injecting collection values both with CI and SI.
+2. We can inject following collections in Spring:
+	- List
+	- Set
+	- Map
+
+Example1:
+--------
+Department.java[BEAN]
+congif.xml
+App.java [Main class]
+
+3. To pust values in the collection, spring provides different tags as follows:
+	A. <list>  is for List
+	B. <set> is for Set
+	C. <map> is for Map
+
+<list> tag
+-----------
+Syntax:
+	<property name="myList">
+		<list>
+			<value>List ELE A</value>
+			<value>List ELE B</value>
+		</list>
+	<property>
+
+	
+<set> tag
+-----------
+Syntax:
+	<property name="mySet">
+		<set>
+			<value>Set ELE A</value>
+			<value>Set ELE B</value>
+		</set>
+	<property>
+	
+	
+<map> tag
+-----------
+Syntax:
+	<property name="myMap">
+		<map>
+			<entry key="0" value="map value A"/>
+			<entry key="1" value="map value B"/>
+		</map>
+	<property>
+	
+4. Collection Injection with <ref>
+A. To inject collection of objects to our bean can also be achieved by <ref>.
+B. Syntax:
+	<property name="personBean">
+		<list>
+			<ref bean="person1"/>
+			<ref bean="person2"/>
+		</list>
+	<property>	
+	
+Example2:
+Book.java         [Bean]
+MyCollection.java [Bean]
+config2.xml       [Configuration]
+App.java          [main class]
+
+	
+	
